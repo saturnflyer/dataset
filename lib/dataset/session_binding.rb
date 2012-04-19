@@ -261,10 +261,10 @@ module Dataset
         return_value = nil
         
         @model_finders.create_finders(record_meta)
-        ActiveRecord::Base.silence do
+        # ActiveRecord::Base.silence do
           return_value = record.create
           @id_cache[record_meta.heirarchy.id_cache_key][symbolic_name] = record.id
-        end
+        # end
         return_value
       end
       

@@ -29,7 +29,7 @@ module Dataset
       end
       
       def to_fixture
-        ::Fixture.new(to_hash, meta.class_name)
+        ::ActiveRecord::Fixtures.new(record_class.connection, record_class.table_name, to_hash, meta.class_name)
       end
       
       def to_hash
